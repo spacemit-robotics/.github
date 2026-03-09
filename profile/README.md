@@ -34,7 +34,13 @@ sudo apt install repo
 mkdir spacemit_robot
 cd spacemit_robot
 
+# 方式一：使用GitHub
 repo init -u https://github.com/spacemit-robotics/manifest.git -b main -m default.xml
+repo sync -j4
+repo start robot-dev --all
+
+# 方式二：使用Gitee：
+repo init -u https://gitee.com/spacemit-robotics/manifest.git -b main -m default.xml
 repo sync -j4
 repo start robot-dev --all
 ```
