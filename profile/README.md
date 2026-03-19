@@ -19,6 +19,7 @@ spacemit_robotis/
 ├── middleware/     # Middleware: ROS2 packages (perception, planning, control, SLAM, etc.)
 ├── scripts/        # Scripts and CI (e.g. GitHub Actions workflows)
 ├── target/         # Build target configurations (JSON files selected by lunch, e.g. kx-generic-omni_agent)
+├── agent/          # AI Agent integration (skill, discovery scripts, preflight checks)
 └── tools/          # Development and debugging tools
 ```
 
@@ -45,6 +46,11 @@ repo start robot-dev --all
 ```
 
 After synchronization completes, enter the repository root (for example, `spacemit_robotis`) to build.
+
+**OpenClaw / AI assistant users**: After code synchronization, run the following command to register the SDK toolchain, enabling automatic module discovery and environment checks:
+```bash
+bash agent/install.sh
+```
 
 ### 3.2 One-Command Build
 
