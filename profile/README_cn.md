@@ -20,6 +20,7 @@ spacemit_robotis/
 ├── middleware/     # 中间件：ROS2 功能包（感知、规划、控制、SLAM 等）
 ├── scripts/        # 脚本与 CI（如 GitHub Actions 工作流）
 ├── target/         # 构建目标配置（lunch 选择的 *.json，如 kx-generic-omni_agent）
+├── agent/          # AI Agent 集成（skill、发现脚本、前置检查）
 └── tools/          # 开发与调试工具
 ```
 
@@ -78,6 +79,20 @@ ros2 run <package> <node>   # 例如：ros2 run peripherals_lidar_node lidar_2d_
 ```
 
 各功能包与应用的运行方式（参数、launch 等）见对应目录下的 README。
+
+### 2.4 AI Agent 集成
+
+SDK 内置了 AI Agent 集成框架，支持通过 AI 助手（如 [OpenClaw](https://github.com/openclaw/openclaw)）自动完成模块发现、环境检查、编译与运行。
+
+```bash
+# 注册 AI skill（repo sync 后执行一次即可）
+bash agent/install.sh
+```
+
+注册后，AI 即可自动：
+- 查看所有模块能力与编译状态
+- 检查前置条件（编译产物、模型文件、硬件连接）
+- 按需编译、下载模型、运行示例
 
 ## 3. 愿景与加入我们
 

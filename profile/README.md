@@ -19,6 +19,7 @@ spacemit_robotis/
 ├── middleware/     # Middleware: ROS2 packages (perception, planning, control, SLAM, etc.)
 ├── scripts/        # Scripts and CI (e.g. GitHub Actions workflows)
 ├── target/         # Build target configurations (JSON files selected by lunch, e.g. kx-generic-omni_agent)
+├── agent/          # AI Agent integration (skill, discovery scripts, preflight checks)
 └── tools/          # Development and debugging tools
 ```
 
@@ -75,6 +76,20 @@ ros2 run <package> <node>   # Example: ros2 run peripherals_lidar_node lidar_2d_
 ```
 
 For the detailed run instructions of each package and application (parameters, launch files, etc.), please refer to the corresponding `README` in each directory.
+
+### 3.4 AI Agent Integration
+
+The SDK includes a built-in AI Agent integration framework, enabling AI assistants (such as [OpenClaw](https://github.com/openclaw/openclaw)) to automatically discover modules, check prerequisites, build, and run examples.
+
+```bash
+# Register the AI skill (run once after repo sync)
+bash agent/install.sh
+```
+
+Once registered, the AI can automatically:
+- Discover all module capabilities and build status
+- Check prerequisites (binaries, model files, hardware connections)
+- Build, download models, and run examples on demand
 
 ## 4. Vision & How to Join
 
