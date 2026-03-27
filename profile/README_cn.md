@@ -42,6 +42,10 @@ repo init -u https://github.com/spacemit-robotics/manifest.git -b main -m defaul
 repo sync -j4
 repo start robot-dev --all
 
+# 中国大陆地区如使用 repo 较慢，可将 init 命令替换为：
+repo init -u https://github.com/spacemit-robotics/manifest.git -b main -m default.xml \
+  --repo-url=https://gitee.com/spacemit-robotics/git-repo
+
 # 方式二：使用Gitee：
 repo init -u https://gitee.com/spacemit-robotics/manifest.git -b main -m default.xml
 repo sync -j4
