@@ -45,6 +45,12 @@ repo sync -j4
 repo start robot-dev --all
 ```
 
+For users in mainland China, if using `repo` is slow, replace the init command with:
+
+```bash
+repo init -u https://github.com/spacemit-robotics/manifest.git -b main -m default.xml --repo-url=https://gitee.com/spacemit-robotics/git-repo
+```
+
 After synchronization completes, enter the repository root (for example, `spacemit_robotis`) to build.
 
 **OpenClaw / AI assistant users**: After code synchronization, run the following command to register the SDK toolchain, enabling automatic module discovery and environment checks:
