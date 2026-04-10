@@ -20,7 +20,6 @@ spacemit_robotis/
 ├── middleware/     # 中间件：ROS2 功能包（感知、规划、控制、SLAM 等）
 ├── scripts/        # 脚本与 CI（如 GitHub Actions 工作流）
 ├── target/         # 构建目标配置（lunch 选择的 *.json，如 kx-generic-omni_agent）
-├── agent/          # AI Agent 集成（skill、发现脚本、前置检查）
 └── tools/          # 开发与调试工具
 ```
 
@@ -38,26 +37,20 @@ mkdir spacemit_robot
 cd spacemit_robot
 
 # 方式一：使用GitHub
-repo init -u https://github.com/spacemit-robotics/manifest.git -b main -m default.xml
+repo init -u https://github.com/spacemit-robotics/manifest.git -b main -m default.xml \
+  --repo-url=https://gitee.com/spacemit-robotics/git-repo
 repo sync -j4
 repo start robot-dev --all
 
-# 中国大陆地区如使用 repo 较慢，可将 init 命令替换为：
-repo init -u https://github.com/spacemit-robotics/manifest.git -b main -m default.xml \
-  --repo-url=https://gitee.com/spacemit-robotics/git-repo
-
 # 方式二：使用Gitee：
-repo init -u https://gitee.com/spacemit-robotics/manifest.git -b main -m default.xml
+repo init -u https://gitee.com/spacemit-robotics/manifest.git -b main -m default.xml \
+  --repo-url=https://gitee.com/spacemit-robotics/git-repo
 repo sync -j4
 repo start robot-dev --all
 ```
 
 同步完成后，进入仓库根目录（如 spacemit_robot）进行构建。
 
-**OpenClaw / AI 助手用户**：代码同步完成后，请先执行以下命令注册 SDK 工具链，以启用模块自动发现与环境检查能力：
-```bash
-bash agent/install.sh
-```
 
 ### 2.2 一键编译
 

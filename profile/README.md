@@ -1,13 +1,16 @@
 [English](./README.md) | [简体中文](./README_cn.md)
 
-SpacemiT Robotics
-==================
+# SpacemiT Robotics
 
 **Committed to an integrated RISC-V + Robotics intelligence stack**
 
 SpacemiT Robotics is the open-source robotics community under SpacemiT. By deeply integrating **RISC-V architecture chips**, **AI foundation models**, and **robot bodies**, we fully tap into RISC-V’s flexibility and potential in low-power operation, AI compute, and real-time control. Our goal is to provide an open, efficient, and scalable next-generation robotic infrastructure platform, bringing general intelligence into the physical world.
 
-## 1. Repository Layout
+## 1. System Architecture
+
+The overall system architecture is illustrated below:
+
+![System Architecture](assets/robot-arch-en.jpg)
 
 The top-level structure of this repository (`spacemit_robotis`) is organized as follows to help you quickly locate code and build entry points:
 
@@ -19,19 +22,12 @@ spacemit_robotis/
 ├── middleware/     # Middleware: ROS2 packages (perception, planning, control, SLAM, etc.)
 ├── scripts/        # Scripts and CI (e.g. GitHub Actions workflows)
 ├── target/         # Build target configurations (JSON files selected by lunch, e.g. kx-generic-omni_agent)
-├── agent/          # AI Agent integration (skill, discovery scripts, preflight checks)
 └── tools/          # Development and debugging tools
 ```
 
-## 2. System Architecture
+## 2. Build & Compilation
 
-The overall system architecture is illustrated below:
-
-![System Architecture](assets/robot-arch-en.jpg)
-
-## 3. Build & Compilation
-
-### 3.1 Fetching the Code
+### 2.1 Fetching the Code
 
 ```bash
 sudo apt update
@@ -40,26 +36,23 @@ sudo apt install repo
 mkdir spacemit_robot
 cd spacemit_robot
 
-repo init -u https://github.com/spacemit-robotics/manifest.git -b main -m default.xml
+# Option 1: use GitHub
+repo init -u https://github.com/spacemit-robotics/manifest.git -b main -m default.xml \
+  --repo-url=https://gitee.com/spacemit-robotics/git-repo
+repo sync -j4
+repo start robot-dev --all
+
+# Option 2: use Gitee
+repo init -u https://gitee.com/spacemit-robotics/manifest.git -b main -m default.xml \
+  --repo-url=https://gitee.com/spacemit-robotics/git-repo
 repo sync -j4
 repo start robot-dev --all
 ```
 
-For users in mainland China, if using `repo` is slow, replace the init command with:
+After synchronization completes, enter the repository root, for example `spacemit_robot`, to build.
 
-```bash
-repo init -u https://github.com/spacemit-robotics/manifest.git -b main -m default.xml \
-  --repo-url=https://gitee.com/spacemit-robotics/git-repo
-```
 
-After synchronization completes, enter the repository root (for example, `spacemit_robotis`) to build.
-
-**OpenClaw / AI assistant users**: After code synchronization, run the following command to register the SDK toolchain, enabling automatic module discovery and environment checks:
-```bash
-bash agent/install.sh
-```
-
-### 3.2 One-Command Build
+### 2.2 One-Command Build
 
 In the repository root, load the environment, select a build target, and run a full build to generate sample applications for each component:
 
@@ -71,7 +64,7 @@ m                        # One-command build to generate applications
 
 For more usage details (single-package build with `mm`, cleaning, `build.sh`, etc.), please refer to [`build/README.md`](https://github.com/spacemit-robotics/build/blob/main/README.md) and [`target/README.md`](https://github.com/spacemit-robotics/target/blob/main/README.md).
 
-### 3.3 Running Examples
+### 2.3 Running Examples
 
 Build artifacts are installed under the `output/staging` directory. After you run `source build/envsetup.sh`, the paths to the generated binaries are automatically added to your environment, so you can execute the following example commands from any working directory.
 
@@ -89,7 +82,7 @@ ros2 run <package> <node>   # Example: ros2 run peripherals_lidar_node lidar_2d_
 
 For the detailed run instructions of each package and application (parameters, launch files, etc.), please refer to the corresponding `README` in each directory.
 
-## 4. Vision & How to Join
+## 3. Vision & How to Join
 
 We believe RISC-V is the future of the robotics industry. Whether you are an algorithm engineer, embedded developer, or robotics enthusiast, you are welcome to participate in the following ways:
 
