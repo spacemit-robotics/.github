@@ -1,92 +1,97 @@
 [English](./README.md) | [简体中文](./README_cn.md)
 
-# SpacemiT Robotics
+# Platform Overview
 
-**Committed to an integrated RISC-V + Robotics intelligence stack**
+**Integrate RISC‑V edge compute, AI, and ROS2 engineering into a reusable robotics foundation.**
 
-SpacemiT Robotics is the open-source robotics community under SpacemiT. By deeply integrating **RISC-V architecture chips**, **AI foundation models**, and **robot bodies**, we fully tap into RISC-V’s flexibility and potential in low-power operation, AI compute, and real-time control. Our goal is to provide an open, efficient, and scalable next-generation robotic infrastructure platform, bringing general intelligence into the physical world.
+SpacemiT Robot SDK targets **RISC‑V robotics platforms** with a unified stack from **system & peripherals**, **multimedia & acceleration**, **AI inference & interaction**, through **ROS2 feature packages**—so you can turn capabilities into runnable whole‑robot solutions faster.
 
-## 1. System Architecture
+You do not need to assemble a complex software environment or master every detail of the build chain or ROS2 build mechanics. Robot SDK exposes a single set of shortcut commands for **full builds** and **per‑component builds**, turning repetitive steps into reusable workflows so you can focus on features and source changes.
 
-The overall system architecture is illustrated below:
+## 1. What You Get
 
-![System Architecture](assets/robot-arch-en.jpg)
+<div style="display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 0px; row-gap: 12px; align-items: start;">
+  <div style="min-width: 0;">
+    <img src="https://cdn-resource.spacemit.com/file/product/K3/assets/robot_nav2.gif" alt="robot_nav2" style="width: 100%; height: 260px; object-fit: contain; display: block;" />
+    <div style="text-align:center; margin-top: 0.5em;">Wheeled robot patrol</div>
+  </div>
+  <div style="min-width: 0;">
+    <img src="https://cdn-resource.spacemit.com/file/product/K3/assets/lerobot.gif" alt="lerobot" style="width: 100%; height: 260px; object-fit: contain; display: block;" />
+    <div style="text-align:center; margin-top: 0.5em;">Manipulator pick‑and‑place</div>
+  </div>
+</div>
 
-The top-level structure of this repository (`spacemit_robotis`) is organized as follows to help you quickly locate code and build entry points:
+<div style="display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 0px; row-gap: 12px; align-items: start; margin-top: 12px;">
+  <div style="min-width: 0;">
+    <img src="https://cdn-resource.spacemit.com/file/product/K3/assets/robot_dance_demo.gif" alt="robot_dance_demo" style="width: 100%; height: 260px; object-fit: contain; display: block;" />
+    <div style="text-align:center; margin-top: 0.5em;">Humanoid dance demo</div>
+  </div>
+  <div style="min-width: 0;">
+    <img src="https://cdn-resource.spacemit.com/file/product/K3/assets/reachy_mini.gif" alt="reachy_mini" style="width: 100%; height: 260px; object-fit: contain; display: block;" />
+    <div style="text-align:center; margin-top: 0.5em;">Reachy Mini gesture tracking</div>
+  </div>
+</div>
+
+- **Reproducible end‑to‑end reference designs**: Humanoids, wheeled robots, desktop robots, arms, quadrupeds, and other typical forms—aligned engineering composition and practice paths.
+- **Reusable on‑device AI**: Vision / speech / LLM / VLM / Agent delivered as components and examples—validate standalone, then integrate on the robot.
+- **Composable ROS2 pipelines**: Perception, control, SLAM, navigation, planning as packages—pick and extend by scenario.
+- **Product‑grade reproducible configuration**: Combine repo/manifest selections for hardware/product targets—make “it runs” the default: maintainable and upgradable.
+- **Customizable system & platform base**: Peripheral drivers, system services, shared memory / multimedia acceleration for edge real‑time and performance.
+
+## 2. Start in 30 Seconds
+
+- **Get something running first (shortest path)**: [02 — Quick start (overview)](https://www.spacemit.com/community/document/info?lang=en&nodepath=software/SDK/ros/k3/02-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8)
+- **Reproduce an end‑to‑end design**: [03 — Reference designs (overview)](https://www.spacemit.com/community/document/info?lang=en&nodepath=software/SDK/ros/k3/03-%E5%8F%82%E8%80%83%E6%96%B9%E6%A1%88)
+- **Browse by capability / module**: topic hubs
+  - [04 — AI capabilities](https://www.spacemit.com/community/document/info?lang=en&nodepath=software/SDK/ros/k3/04-AI%E8%83%BD%E5%8A%9B) (speech / vision / LLM / VLM / Agent)
+  - [05 — Robotics development](https://www.spacemit.com/community/document/info?lang=en&nodepath=software/SDK/ros/k3/05-%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%BC%80%E5%8F%91) (perception / control / SLAM / navigation / planning)
+  - [06 — System & platform](https://www.spacemit.com/community/document/info?lang=en&nodepath=software/SDK/ros/k3/06-%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%B9%B3%E5%8F%B0) (system services / peripherals / multimedia)
+- **Full TOC or other topics**: [ROS / SDK documentation hub (community)](https://www.spacemit.com/community/document/info?lang=en&nodepath=software/SDK/ros/root_overview.md) — root of the doc tree; open sections beyond the quick links above.
+
+## 3. Architecture & Layers
+
+![System architecture](assets/robot-arch-en.jpg)
+
+How to read the diagram (top to bottom):
+
+- **Application & reference designs**: End‑to‑end apps and whole‑robot references (see [03 — Reference designs](https://www.spacemit.com/community/document/info?lang=en&nodepath=software/SDK/ros/k3/03-%E5%8F%82%E8%80%83%E6%96%B9%E6%A1%88)).
+- **Full‑stack toolchain**: One‑click deploy, cloud‑native dev environments, production‑grade build tools, simulation & migration, on‑device AI deployment—to speed up development, verification, and delivery.
+- **Polymorphic middleware**: ROS2 / DDS / custom protocols / multi‑process IPC / no‑middleware direct modes—for different system shapes and comms needs (see [05 — Robotics development](https://www.spacemit.com/community/document/info?lang=en&nodepath=software/SDK/ros/k3/05-%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%BC%80%E5%8F%91)).
+- **Core capability suite**: AI components for vision / speech / LLM / VLM / Agent (see [04 — AI capabilities](https://www.spacemit.com/community/document/info?lang=en&nodepath=software/SDK/ros/k3/04-AI%E8%83%BD%E5%8A%9B)); platform services, peripherals, multimedia (see [06 — System & platform](https://www.spacemit.com/community/document/info?lang=en&nodepath=software/SDK/ros/k3/06-%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%B9%B3%E5%8F%B0)).
+- **OS layer**: Ubuntu / Bianbu / Buildroot and runtime environments.
+- **Kernel layer**: Linux kernel / RTOS kernel.
+- **Compute platform**: SpacemiT RISC‑V AI CPU.
 
 ```text
-spacemit_robotis/
-├── application/    # Applications and example projects (robot apps, demos, etc.)
-├── build/          # Unified build system: envsetup.sh, build.sh, CMake/ROS2 build scripts
-├── components/     # Core components: model zoo (LLM/VLM), peripheral drivers, system libs, multimedia, etc.
-├── middleware/     # Middleware: ROS2 packages (perception, planning, control, SLAM, etc.)
-├── scripts/        # Scripts and CI (e.g. GitHub Actions workflows)
-├── target/         # Build target configurations (JSON files selected by lunch, e.g. kx-generic-omni_agent)
-└── tools/          # Development and debugging tools
+spacemit_robot/
+├── application/                 # Application recipes (case aggregation)
+│   ├── native/                  # Non‑ROS2 applications
+│   │   ├── reachy_mini/
+│   │   ├── lerobot_app/
+│   │   ├── omni_agent/
+│   │   └── humanoid_*/
+│   └── ros2/                    # ROS2 reference apps
+│       └── linksee/
+├── middleware/
+│   └── ros2/                    # ROS2 middleware layer
+│       ├── perception/ planning/ slam/
+│       ├── control/ peripherals/ interfaces/
+│       └── multimedia/ mpp/ gui/ tools/
+├── components/                  # Shared capability components
+│   ├── peripherals/ multimedia/ model_zoo/
+│   ├── control/ ai-gateway/ agent_tools/
+│   └── simulation/ system/ rvv_libs/ thirdparty/
+├── target/                      # Hardware / product configuration
+└── build/                       # One‑shot build scripts
 ```
 
-## 2. Build & Compilation
+Directory layout highlights:
 
-### 2.1 Fetching the Code
+- **Capabilities vs framework—not locked into ROS2**: `components/` holds devices, models, multimedia, control, etc.; `middleware/` adapts and orchestrates transports (e.g. ROS2). Ship native first, then add ROS2, Fast DDS, custom stacks, or direct modes—without upfront middleware coupling.
+- **Apps decoupled from capabilities**: Apps (`reachy_mini`, `humanoid_*`, `application/ros2` such as `linksee`) share the same bottom layers; new form factors are mostly swapping application bundles, not rewriting capabilities.
+- **Composable checkout**: `repo init -g` groups let you fetch humanoid / wheeled / desktop / perception / planning‑control slices—smaller trees and faster iteration.
+- **Fast composition for solutions**: New products assemble selected components + middleware + app shell + `target` profile—demonstrable, iterative, and maintainable vs. greenfield stacks.
 
-```bash
-sudo apt update
-sudo apt install repo
+## 4. Releases & Changes
 
-mkdir spacemit_robot
-cd spacemit_robot
-
-# Option 1: use GitHub
-repo init -u https://github.com/spacemit-robotics/manifest.git -b main -m default.xml \
-  --repo-url=https://gitee.com/spacemit-robotics/git-repo
-repo sync -j4
-repo start robot-dev --all
-
-# Option 2: use Gitee
-repo init -u https://gitee.com/spacemit-robotics/manifest.git -b main -m default.xml \
-  --repo-url=https://gitee.com/spacemit-robotics/git-repo
-repo sync -j4
-repo start robot-dev --all
-```
-
-After synchronization completes, enter the repository root, for example `spacemit_robot`, to build.
-
-
-### 2.2 One-Command Build
-
-In the repository root, load the environment, select a build target, and run a full build to generate sample applications for each component:
-
-```bash
-source build/envsetup.sh
-lunch                    # Interactively select a target such as 3, or directly: lunch kx-generic-omni_agent
-m                        # One-command build to generate applications
-```
-
-For more usage details (single-package build with `mm`, cleaning, `build.sh`, etc.), please refer to [`build/README.md`](https://github.com/spacemit-robotics/build/blob/main/README.md) and [`target/README.md`](https://github.com/spacemit-robotics/target/blob/main/README.md).
-
-### 2.3 Running Examples
-
-Build artifacts are installed under the `output/staging` directory. After you run `source build/envsetup.sh`, the paths to the generated binaries are automatically added to your environment, so you can execute the following example commands from any working directory.
-
-```bash
-# Object detection
-yolov8 components/model_zoo/cv/examples/yolov8/config/yolov8.yaml
-```
-
-For ROS2-based applications:
-
-```bash
-sros2_setup                 # Load ROS2 + SDK overlay
-ros2 run <package> <node>   # Example: ros2 run peripherals_lidar_node lidar_2d_node
-```
-
-For the detailed run instructions of each package and application (parameters, launch files, etc.), please refer to the corresponding `README` in each directory.
-
-## 3. Vision & How to Join
-
-We believe RISC-V is the future of the robotics industry. Whether you are an algorithm engineer, embedded developer, or robotics enthusiast, you are welcome to participate in the following ways:
-
-1. **Submit Issues/PRs**: Help us optimize models and software stacks on RISC-V chips.
-2. **Star & Follow**: Star our core repositories to stay up to date with the latest SDK releases.
-3. **Contact Us**: Visit [`https://www.spacemit.com/`](https://www.spacemit.com/)
-
+- **Release notes & compatibility**: [07 — Version notes](https://www.spacemit.com/community/document/info?lang=en&nodepath=software/SDK/ros/k3/07-%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E)

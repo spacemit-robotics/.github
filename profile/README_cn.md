@@ -1,91 +1,96 @@
-[English](./README.md) | [简体中文](./README_cn.md)
+# 平台概览
 
-# SpacemiT Robotics
+**把RISCV端侧算力、AI 与 ROS2 工程化整合成“可复用的机器人底座”。**
 
-**致力于 RISC-V + 机器人智能化一体技术栈**
+SpacemiT Robot SDK 面向 **RISC‑V 机器人平台**，提供从 **系统与外设**、**多媒体与加速**、**AI 推理与交互能力** 到 **ROS2 机器人功能包** 的一体化软件栈，帮助你更快把“能力”变成“可跑的整机方案”。
 
-SpacemiT Robotics 是进迭时空（SpacemiT）旗下的机器人开源社区。我们通过深度整合 **RISC-V 架构芯片**、**Ai大模型** 与 **机器人本体**，充分挖掘 RISC-V 在低功耗、AI 算力与实时控制中的高灵活性潜力。提供一个开放、高效、可扩展的新一代机器人基础设施平台，让通用智能真正融入物理世界。
+不需要搭建复杂的软件环境，也不必深入理解编译链路细节或 ROS2 的构建机制；Robot SDK 提供统一的快捷命令入口，支持一键式**全量编译**与**按组件单独编译**，把常见但繁琐的构建步骤标准化为可复用流程，让你把精力放在功能开发与源码改动上。
 
-## 1. 系统架构
+## 1. 你能获得什么
+
+<div style="display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 0px; row-gap: 12px; align-items: start;">
+  <div style="min-width: 0;">
+    <img src="https://cdn-resource.spacemit.com/file/product/K3/assets/robot_nav2.gif" alt="robot_nav2" style="width: 100%; height: 260px; object-fit: contain; display: block;" />
+    <div style="text-align:center; margin-top: 0.5em;">轮式机器人巡航</div>
+  </div>
+  <div style="min-width: 0;">
+    <img src="https://cdn-resource.spacemit.com/file/product/K3/assets/lerobot.gif" alt="lerobot" style="width: 100%; height: 260px; object-fit: contain; display: block;" />
+    <div style="text-align:center; margin-top: 0.5em;">机械臂搬运</div>
+  </div>
+</div>
+
+<div style="display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 0px; row-gap: 12px; align-items: start; margin-top: 12px;">
+  <div style="min-width: 0;">
+    <img src="https://cdn-resource.spacemit.com/file/product/K3/assets/robot_dance_demo.gif" alt="robot_dance_demo" style="width: 100%; height: 260px; object-fit: contain; display: block;" />
+    <div style="text-align:center; margin-top: 0.5em;">人型机器人跳舞</div>
+  </div>
+  <div style="min-width: 0;">
+    <img src="https://cdn-resource.spacemit.com/file/product/K3/assets/reachy_mini.gif" alt="reachy_mini" style="width: 100%; height: 260px; object-fit: contain; display: block;" />
+    <div style="text-align:center; margin-top: 0.5em;">reachy mini手势跟踪</div>
+  </div>
+</div>
+
+- **可复现的端到端参考方案**：覆盖人型机器人、轮式机器人、桌面机器人、机械臂、四足狗等典型形态，帮助快速对齐工程组合方式与实践路径。
+- **可复用的AI端侧能力**：视觉/语音/LLM/VLM/Agent 等能力以组件与示例提供，便于独立验证后再集成到整机。
+- **可组合的ROS2功能链路**：感知、控制、SLAM、导航、规划等按功能包组织，支持按场景选择与扩展。
+- **可复现的产品化配置**：通过组合仓库配置选择硬件/产品配置，把“能跑”做成“默认可跑、可维护、可升级”。
+- **可定制的系统与平台底座**：外设驱动、系统服务、共享内存/多媒体加速等能力支撑端侧实时与性能需求。
+
+## 2. 30 秒开始
+
+- **想先跑起来（最快闭环）** ：[02-快速入门（总览）](https://www.spacemit.com/community/document/info?lang=zh&nodepath=software/SDK/ros/k3/02-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8)
+- **想直接复现一个端到端方案** ：[03-参考方案（总览）](https://www.spacemit.com/community/document/info?lang=zh&nodepath=software/SDK/ros/k3/03-%E5%8F%82%E8%80%83%E6%96%B9%E6%A1%88)
+- **想按能力/模块查资料** ：从专题域进入
+  - [04-AI能力](https://www.spacemit.com/community/document/info?lang=zh&nodepath=software/SDK/ros/k3/04-AI%E8%83%BD%E5%8A%9B)（语音/视觉/LLM/VLM/Agent）
+  - [05-机器人开发](https://www.spacemit.com/community/document/info?lang=zh&nodepath=software/SDK/ros/k3/05-%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%BC%80%E5%8F%91)（感知/控制/SLAM/导航/规划）
+  - [06-系统与平台](https://www.spacemit.com/community/document/info?lang=zh&nodepath=software/SDK/ros/k3/06-%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%B9%B3%E5%8F%B0)（系统服务/外设驱动/多媒体）
+- **要查完整目录或其它专题**：[ROS / SDK 文档总览（社区站）](https://www.spacemit.com/community/document/info?lang=zh&nodepath=software/SDK/ros/root_overview.md) — 文档树根入口，可展开浏览未在上文快速入口中出现的章节。
+
+## 3. 架构与分层
 
 ![系统架构图](assets/robot-arch.jpg)
 
-本仓库（spacemit_robotis）顶层目录如下，便于快速定位代码与构建入口：
+读图指南（自上而下）：
 
-```
-spacemit_robotis/
-├── application/    # 应用与示例工程（机器人应用、Demo 等）
-├── build/          # 统一构建系统：envsetup.sh、build.sh、CMake/ROS2 构建脚本
-├── components/     # 核心组件：模型库(LLM/VLM)、外设驱动、系统库、多媒体等
-├── middleware/     # 中间件：ROS2 功能包（感知、规划、控制、SLAM 等）
-├── scripts/        # 脚本与 CI（如 GitHub Actions 工作流）
-├── target/         # 构建目标配置（lunch 选择的 *.json，如 kx-generic-omni_agent）
-└── tools/          # 开发与调试工具
-```
+- **应用案例层**：端到端应用与整机参考实现（见 [03-参考方案](https://www.spacemit.com/community/document/info?lang=zh&nodepath=software/SDK/ros/k3/03-%E5%8F%82%E8%80%83%E6%96%B9%E6%A1%88)）。
+- **全链路开发工具链（贯穿全栈）**：应用一键部署中心、云原生开发环境、量产级构建工具、仿真与迁移部署、端侧 AI 部署等能力，用于加速开发、验证与交付。
+- **多态通信中间件层**：ROS2 / DDS / 自定义协议 / 多进程通信 / 无中间件直通模式，用于适配不同系统形态与通信需求（见 [05-机器人开发](https://www.spacemit.com/community/document/info?lang=zh&nodepath=software/SDK/ros/k3/05-%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%BC%80%E5%8F%91)）。
+- **核心功能套件层**：视觉/语音/LLM/VLM/Agent 等 AI 组件能力（见 [04-AI能力](https://www.spacemit.com/community/document/info?lang=zh&nodepath=software/SDK/ros/k3/04-AI%E8%83%BD%E5%8A%9B)），系统服务、外设驱动与多媒体等平台能力（见 [06-系统与平台](https://www.spacemit.com/community/document/info?lang=zh&nodepath=software/SDK/ros/k3/06-%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%B9%B3%E5%8F%B0)）。
+- **系统层**：Ubuntu / Bianbu / Buildroot 等操作系统形态与运行环境。
+- **内核层**：Linux 内核 / RTOS 内核。
+- **算力平台层**：SpacemiT RISC‑V AI CPU。
 
-## 2. 构建编译
-
-### 2.1 代码获取
-
-
-```bash
-
-sudo apt update
-sudo apt install repo
-
-mkdir spacemit_robot
-cd spacemit_robot
-
-# 方式一：使用GitHub
-repo init -u https://github.com/spacemit-robotics/manifest.git -b main -m default.xml \
-  --repo-url=https://gitee.com/spacemit-robotics/git-repo
-repo sync -j4
-repo start robot-dev --all
-
-# 方式二：使用Gitee：
-repo init -u https://gitee.com/spacemit-robotics/manifest.git -b main -m default.xml \
-  --repo-url=https://gitee.com/spacemit-robotics/git-repo
-repo sync -j4
-repo start robot-dev --all
+```text
+spacemit_robot/
+├── application/                 # 应用层方案（案例聚合）
+│   ├── native/                  # 非ROS2应用方案
+│   │   ├── reachy_mini/
+│   │   ├── lerobot_app/
+│   │   ├── omni_agent/
+│   │   └── humanoid_*/
+│   └── ros2/                    # ROS2应用参考方案
+│       └── linksee/
+├── middleware/
+│   └── ros2/                    # ROS2 中间层
+│       ├── perception/ planning/ slam/
+│       ├── control/ peripherals/ interfaces/
+│       └── multimedia/ mpp/ gui/ tools/
+├── components/                  # 通用能力组件层
+│   ├── peripherals/ multimedia/ model_zoo/
+│   ├── control/ ai-gateway/ agent_tools/
+│   └── simulation/ system/ rvv_libs/ thirdparty/
+├── target/                      # 硬件/产品配置聚合
+└── build/                       # 一键式编译脚本
 ```
 
-同步完成后，进入仓库根目录（如 spacemit_robot）进行构建。
+上面是整个SDK的目录结构，其特点如下：
+
+- **能力与框架分离，避免“被ROS2绑死”**：component先沉淀设备、模型、多媒体、控制等通用能力，middleware只负责通信组件（如ROS2）适配与编排。可先做native版本验证，再按需接入 ROS2、FastDDS、自定义通信组件或直通模式，而不是一开始就被中间件耦合。
+- **应用与能力解耦，复用链路清晰**：应用（如reachy_mini、humanoid_*）和application/ros2（如linksee）共用同一批底层组件；换形态通常是“替换应用组合”，不是重写底层能力。
+- **支持组合下载，按场景最小化拉取代码**：通过repo init的-g分组机制，可按人形、轮式、桌面、感知、规划控制等场景只下载所需仓库，减少初始化时间与本地占用，提升迭代效率。
+- **组合效率高，适合快速出方案**：新方案通常是“选组件 + 选中间层 + 选应用壳 + 选 target 配置”的装配过程。相比从零搭栈，更容易在短周期内做出可演示、可迭代、可维护的版本。
 
 
-### 2.2 一键编译
+## 4. 版本与变更
 
-在仓库根目录加载环境、选择构建目标后执行全量编译可直接生成各组件的示例应用：
-
-```bash
-source build/envsetup.sh
-lunch                    # 交互选择目标如3，或直接：lunch kx-generic-omni_agent
-m                        # 一键编译生成应用
-```
-
-更多用法（单包构建 mm、清理、build.sh 等）见 [build/README.md](https://github.com/spacemit-robotics/build/blob/main/README.md) 与 [target/README.md](https://github.com/spacemit-robotics/target/blob/main/README.md)。
-
-### 2.3 示例运行
-
-构建产物会安装在 `output/staging` 目录下。在执行 `source build/envsetup.sh` 后，可执行程序所在路径会自动加入环境变量，因此你可以在任意工作目录下直接运行下面的示例命令。
-
-```bash
-# 目标检测
-yolov8 components/model_zoo/cv/examples/yolov8/config/yolov8.yaml
-```
-
-如果是ros2的应用
-
-```bash
-sros2_setup              # 加载 ROS2 + SDK  overlay
-ros2 run <package> <node>   # 例如：ros2 run peripherals_lidar_node lidar_2d_node
-```
-
-各功能包与应用的运行方式（参数、launch 等）见对应目录下的 README。
-
-## 3. 愿景与加入我们
-
-我们相信 RISC-V 是机器人产业的未来。无论你是算法工程师、嵌入式开发者还是机器人爱好者，欢迎通过以下方式参与：
-
-1.  **提交 Issue/PR**: 帮助我们优化模型在RISC-V芯片上的表现。
-2.  **Star 关注**: 关注我们的核心仓库，获取最新的 SDK 更新。
-3.  **联系我们**: [www.spacemit.com](https://www.spacemit.com/)
+- **版本发布与兼容性说明**：[07-版本说明](https://www.spacemit.com/community/document/info?lang=zh&nodepath=software/SDK/ros/k3/07-%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E)
