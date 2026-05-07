@@ -45,7 +45,7 @@ You do not need to assemble a complex software environment or master every detai
 - **Get something running first (shortest path)**: [02 — Quick start (overview)](https://www.spacemit.com/community/document/info?lang=en&nodepath=software/SDK/ros/k3/02-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8)
 - **Reproduce an end‑to‑end design**: [03 — Reference designs (overview)](https://www.spacemit.com/community/document/info?lang=en&nodepath=software/SDK/ros/k3/03-%E5%8F%82%E8%80%83%E6%96%B9%E6%A1%88)
 - **Browse by capability / module**: topic hubs
-  - [04 — AI capabilities](https://www.spacemit.com/community/document/info?lang=en&nodepath=software/SDK/ros/k3/04-AI%E8%83%BD%E5%8A%9B) (speech / vision / LLM / VLM / Agent)
+  - [04 — AI and algorithms](https://www.spacemit.com/community/document/info?lang=en&nodepath=software/SDK/ros/k3/04-AI%E4%B8%8E%E7%AE%97%E6%B3%95) (speech / vision / LLM / VLM / Agent)
   - [05 — Robotics development](https://www.spacemit.com/community/document/info?lang=en&nodepath=software/SDK/ros/k3/05-%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%BC%80%E5%8F%91) (perception / control / SLAM / navigation / planning)
   - [06 — System & platform](https://www.spacemit.com/community/document/info?lang=en&nodepath=software/SDK/ros/k3/06-%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%B9%B3%E5%8F%B0) (system services / peripherals / multimedia)
 - **Full TOC or other topics**: [ROS / SDK documentation hub (community)](https://www.spacemit.com/community/document/info?lang=en&nodepath=software/SDK/ros/root_overview.md) — root of the doc tree; open sections beyond the quick links above.
@@ -59,7 +59,7 @@ How to read the diagram (top to bottom):
 - **Application & reference designs**: End‑to‑end apps and whole‑robot references (see [03 — Reference designs](https://www.spacemit.com/community/document/info?lang=en&nodepath=software/SDK/ros/k3/03-%E5%8F%82%E8%80%83%E6%96%B9%E6%A1%88)).
 - **Full‑stack toolchain**: One‑click deploy, cloud‑native dev environments, production‑grade build tools, simulation & migration, on‑device AI deployment—to speed up development, verification, and delivery.
 - **Polymorphic middleware**: ROS2 / DDS / custom protocols / multi‑process IPC / no‑middleware direct modes—for different system shapes and comms needs (see [05 — Robotics development](https://www.spacemit.com/community/document/info?lang=en&nodepath=software/SDK/ros/k3/05-%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%BC%80%E5%8F%91)).
-- **Core capability suite**: AI components for vision / speech / LLM / VLM / Agent (see [04 — AI capabilities](https://www.spacemit.com/community/document/info?lang=en&nodepath=software/SDK/ros/k3/04-AI%E8%83%BD%E5%8A%9B)); platform services, peripherals, multimedia (see [06 — System & platform](https://www.spacemit.com/community/document/info?lang=en&nodepath=software/SDK/ros/k3/06-%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%B9%B3%E5%8F%B0)).
+- **Core capability suite**: AI components for vision / speech / LLM / VLM / Agent (see [04 — AI and algorithms](https://www.spacemit.com/community/document/info?lang=en&nodepath=software/SDK/ros/k3/04-AI%E4%B8%8E%E7%AE%97%E6%B3%95)); platform services, peripherals, multimedia (see [06 — System & platform](https://www.spacemit.com/community/document/info?lang=en&nodepath=software/SDK/ros/k3/06-%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%B9%B3%E5%8F%B0)).
 - **OS layer**: Ubuntu / Bianbu / Buildroot and runtime environments.
 - **Kernel layer**: Linux kernel / RTOS kernel.
 - **Compute platform**: SpacemiT RISC‑V AI CPU.
